@@ -98,4 +98,29 @@ export async function updateRecipeByID(id, updatedRecipe) {
 }
 
 // DELETE A RECIPE BY ID
-export async function deleteRecipeByID(id) {}
+export async function deleteRecipeByID(id) {
+	// read jsonData save to variable
+	const jsonData = await readJsonFile(fileName);
+	// create null index variable
+	let index = null;
+	// for loop find item update index variable, break
+	for (let i = 0; i < jsonData.length; i++) {
+		if (jsonData[i].id === id) {
+			index = i;
+			break;
+		}
+	}
+
+	if (index !== null) {
+		const deletedArray = jsonData.splice(index, 1);
+		await writeJsonFile(fileName, jsonData);
+		return deletedArray[0];
+	}
+
+	return null;
+	// run splice method on jsonData.splice(index, 1)
+
+	// write jsonData back to file
+
+	// return splice product[0]
+}

@@ -53,9 +53,10 @@ app.patch("/api/recipes/:id", async function (req, res) {
 // take id out of body params
 // respond with dummy response
 
-app.delete("/api/recipes/:id", function (req, res) {
-	const extractedID = req.params.id;
-	res.json({ requestedID: extractedID });
+app.delete("/api/recipes/:id", async function (req, res) {
+	const id = req.params.id;
+	const deletedItem = await deleteRecipeByID(id);
+	res.json(deletedItem);
 });
 
 app.listen(PORT, () => {
