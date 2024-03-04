@@ -34,7 +34,19 @@ export async function getRecipes() {
 }
 
 // GET A RECIPE BY ID
-export async function getRecipeByID(id) {}
+export async function getRecipeByID(id) {
+	try {
+		const recipes = await readJsonFile(fileName);
+		for (const recipe of recipes) {
+			if (recipe.id === id) {
+				return recipe;
+			}
+		}
+	} catch (error) {
+		console.error("Error. Recipe not found ", error);
+		return null;
+	}
+}
 
 // CREATE A RECIPE
 export async function createRecipe(newRecipe) {}

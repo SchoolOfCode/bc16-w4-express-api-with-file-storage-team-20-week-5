@@ -15,7 +15,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 // create a get route
-// respond with dummy response
 app.get("/api/recipes", async function (req, res) {
 	const recipes = await getRecipes();
 	res.json(recipes);
@@ -24,10 +23,10 @@ app.get("/api/recipes", async function (req, res) {
 // create a get by ID route
 // Take ID out of body params
 // respond with dummy response
-
-app.get("/api/recipes/:id", function (req, res) {
-	const extractedID = req.params.id;
-	res.json({ requestedID: extractedID });
+app.get("/api/recipes/:id", async function (req, res) {
+	const id = req.params.id;
+	const recipe = await getRecipeByID(id);
+	res.json(recipe);
 });
 
 // create a post request
