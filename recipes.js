@@ -78,7 +78,8 @@ export async function updateRecipeByID(id, updatedRecipe) {
 	let returnRecipe = null;
 
 	// find item by id in recipes
-	for (const recipe in jsonData) {
+	for (const recipe of jsonData) {
+		console.log(recipe);
 		// if located update the items with the nullish coalescing operator
 		if (recipe.id === id) {
 			returnRecipe = recipe;
