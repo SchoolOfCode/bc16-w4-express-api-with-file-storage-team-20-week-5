@@ -17,7 +17,7 @@ app.use(express.json());
 // create a get route
 app.get("/api/recipes", async function (req, res) {
 	const recipes = await getRecipes();
-	res.json(recipes);
+	res.json({ payload: recipes });
 });
 
 // create a get by ID route

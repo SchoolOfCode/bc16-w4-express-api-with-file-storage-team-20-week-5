@@ -15,5 +15,33 @@
     ],
     "instructions": "Mix it all together and cook it",
     "image": "https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg?crop=0.668xw:1.00xh;0.107xw,0.00240xh&resize=1200:*"
+  },
+  {
+    "id": "ff8c04ab-cbda-4d12-b591-9bb87ccb44e6",
+    "title": "Milk Shake ",
+    "ingredients": [
+      "milk",
+      "vanilla",
+      "ice cream",
+      "human hair"
+    ],
+    "instructions": "Mix it all together and give it a whirl",
+    "image": "https://preppykitchen.com/wp-content/uploads/2021/04/Milkshake-Recipe-Card.jpg"
+  },
+  {
+    "id": "6ccc12b8-9050-4493-a8de-92c0d300b723",
+    "title": "Chicken caesar salad",
+    "ingredients": [
+      "olive oil",
+      "chicken breasts",
+      "romaine lettuce",
+      "garlic",
+      "anchovies",
+      "parmasan",
+      "mayonnaise",
+      "wine vinegar"
+    ],
+    "instructions": "Heat oven to 200C/fan 180C/gas 6. Tear 1 medium ciabatta into big, ragged croutons or, if you prefer, cut with a bread knife. Spread over a large baking sheet or tray and sprinkle over 2 tbsp olive oil.\nRub the oil into the bread and season with a little salt if you like (sea salt crystals are best for this). Bake for 8-10 mins, turning the croutons a few times during cooking so they brown evenly.\nRub 2 skinless, boneless chicken breasts with 1 tbsp olive oil, season. Place pan over a medium heat for 1 min, until hot, but not smoking. Lay the chicken on the pan (it will sizzle if it’s hot enough) and leave for 4 mins.\nTurn the chicken, then cook for 4 mins more. Check if it’s cooked by poking the tip of a sharp knife into the thickest part; there should be no sign of pink and juices will run clear.\nBash 1 garlic clove with the flat of a knife and peel off the skin. Crush with a garlic crusher. Mash 2 anchovies with a fork against the side of a small bowl.\n\nGrate a handful of parmesan cheese and mix with the garlic, anchovies, 5 tbsp Hellmann's Real Mayonnaise and 1 tbsp white wine vinegar. Season to taste. It should be the consistency of yogurt – if yours is thicker, stir in a few tsps water to thin it.\n\n",
+    "image": "https://s23209.pcdn.co/wp-content/uploads/2023/01/220905_DD_Chx-Caesar-Salad_051.jpg"
   }
 ]
