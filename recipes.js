@@ -69,7 +69,32 @@ export async function createRecipe(newRecipe) {
 }
 
 // UPDATE A RECIPE BY ID
-export async function updateRecipeByID(id, updatedRecipe) {}
+export async function updateRecipeByID(id, updatedRecipe) {
+	// save variables
+	const { title, ingredients, instructions, image } = updatedRecipe;
+	// read jsonData
+	const jsonData = await readJsonFile(fileName);
+	// declare for scope reasons.
+	let returnRecipe = null;
+
+	// find item by id in recipes
+	for (const recipe in jsonData) {
+		// if located update the items with the nullish coalescing operator
+		if (recipe.id === id) {
+			returnRecipe = recipe;
+			recipe.title = title ?? recipe.title;
+			recipe.ingredients = ingredients ?? recipe.ingredients;
+			recipe.instructions = instructions ?? recipe.instructions;
+			recipe.image = image ?? recipe.image;
+
+			break;
+		}
+	}
+	await writeJsonFile(fileName, jsonData);
+	return returnRecipe;
+	// write to json file
+	// return object written
+}
 
 // DELETE A RECIPE BY ID
 export async function deleteRecipeByID(id) {}

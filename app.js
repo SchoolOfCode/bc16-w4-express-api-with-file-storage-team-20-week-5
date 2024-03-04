@@ -41,11 +41,12 @@ app.post("/api/recipes", async function (req, res) {
 // grab req body
 // grab params id
 
-app.patch("/api/recipes/:id", function (req, res) {
+app.patch("/api/recipes/:id", async function (req, res) {
 	const id = req.params.id;
 	const recipeEdit = req.body;
+	const updatedRecipe = updateRecipeByID(id, recipeEdit);
 
-	res.json({ recipeEdit, id: id });
+	res.json(updatedRecipe);
 });
 
 // create a delete request
