@@ -1,11 +1,11 @@
 import express from "express";
 
 import {
-  getRecipes,
-  getRecipeByID,
-  createRecipe,
-  updateRecipeByID,
-  deleteRecipeByID,
+	getRecipes,
+	getRecipeByID,
+	createRecipe,
+	updateRecipeByID,
+	deleteRecipeByID,
 } from "./recipes.js";
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(express.json());
 // create a get route
 // respond with dummy response
 app.get("/api/recipes", function (req, res) {
-  res.json({ request: "success" });
+	res.json({ request: "success" });
 });
 
 // create a get by ID route
@@ -25,8 +25,8 @@ app.get("/api/recipes", function (req, res) {
 // respond with dummy response
 
 app.get("/api/recipes/:id", function (req, res) {
-  const extractedID = req.params.id;
-  res.json({ requestID: extractedID });
+	const extractedID = req.params.id;
+	res.json({ requestID: extractedID });
 });
 
 // create a post request
@@ -34,10 +34,20 @@ app.get("/api/recipes/:id", function (req, res) {
 // respond in json form with boolean and recipes as payload
 
 app.post("/api/recipes", function (req, res) {
-  const newRecipe = req.body;
-  res.json({ newRecipe: newRecipe, sucess: true });
+	const newRecipe = req.body;
+	res.json({ newRecipe: newRecipe, success: true });
+});
+
+// grab req body
+// grab params id
+
+app.patch("/api/recipes/:id", function (req, res) {
+	const id = req.params.id;
+	const recipeEdit = req.body;
+
+	res.json({ recipeEdit, id: id });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+	console.log(`Server listening on port ${PORT}`);
 });
