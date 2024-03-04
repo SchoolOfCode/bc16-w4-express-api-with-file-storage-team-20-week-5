@@ -33,9 +33,9 @@ app.get("/api/recipes/:id", async function (req, res) {
 // want to add to body with req.body
 // respond in json form with boolean and recipes as payload
 
-app.post("/api/recipes", function (req, res) {
-	const newRecipe = req.body;
-	res.json({ newRecipe: newRecipe, success: true });
+app.post("/api/recipes", async function (req, res) {
+	const newRecipe = await createRecipe(req.body);
+	res.json(newRecipe);
 });
 
 // grab req body

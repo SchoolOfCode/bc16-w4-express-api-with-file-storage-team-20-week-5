@@ -49,7 +49,24 @@ export async function getRecipeByID(id) {
 }
 
 // CREATE A RECIPE
-export async function createRecipe(newRecipe) {}
+export async function createRecipe(newRecipe) {
+	// read json recipes save array to variable
+	const recipes = await readJsonFile(fileName);
+	// create new object with uuid and newRecipe
+	const { title, ingredients, instructions, image } = newRecipe;
+	const newObject = {
+		id: uuidv4(),
+		title,
+		ingredients,
+		instructions,
+		image,
+	};
+	// push object to array
+	recipes.push(newObject);
+	// write to json and return new item
+	await writeJsonFile(fileName, recipes);
+	return newObject;
+}
 
 // UPDATE A RECIPE BY ID
 export async function updateRecipeByID(id, updatedRecipe) {}
