@@ -8,15 +8,15 @@ jobs:
 
     steps:
     - name: Checkout the head commit of the branch
-      uses: actions/checkout@latest
+      uses: actions/checkout@v4
       with:
         persist-credentials: false
                   
     - name: Go setup
-      uses: actions/setup-go@latest
+      uses: actions/setup-go@v4
              
     - name: Run auto dependency update 
-      uses: romoh/dependencies-autoupdate@latest
+      uses: romoh/dependencies-autoupdate@v1
       with: 
         token: ${{ secrets.TOKEN }}
         update-command: "'go get -u && go mod tidy && go build'"
